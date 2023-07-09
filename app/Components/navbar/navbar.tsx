@@ -8,8 +8,9 @@ import { Box } from '../styles/box';
 import { Flex } from '../styles/flex';
 import { BurguerButton } from './burguer-button';
 import { NotificationsDropdown } from './notifications-dropdown';
-import { UserLogin } from '../userlogin';
-import LoginButton  from "../Login"
+import { DarkModeSwitch } from './darkmodeswitch';
+import LoginButton from "../Login"
+
 
 interface Props {
    children: React.ReactNode;
@@ -110,12 +111,7 @@ export const NavbarWrapper = ({ children }: Props) => {
                   <SupportIcon />
                </Navbar.Content>
                <Navbar.Content>
-                  <Link
-                     href="https://github.com/"
-                     target={'_blank'}
-                  >
-                     <GithubIcon />
-                  </Link>
+                 < DarkModeSwitch/>
                </Navbar.Content>
                <Navbar.Content>
                   <LoginButton />
