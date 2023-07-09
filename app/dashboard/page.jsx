@@ -8,6 +8,7 @@ import { Layout } from '../Components/layout/layout';
 import ChartAreaPage from "../Components/charts/page"
 import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs';
 
+import LoadingScreen from '../Components/loadingscreen';
 
 
 const lightTheme = createTheme({
@@ -26,6 +27,7 @@ const darkTheme = createTheme({
 const Dashboard = () => {
   return (
     <div>
+      {/* <LoadingScreen /> */}
       <SignedIn>
         <div>
           <NextThemesProvider

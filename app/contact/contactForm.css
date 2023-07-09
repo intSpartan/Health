@@ -1,6 +1,6 @@
 .contact-form {
     /* background-color: #000; */
-    color: #fff;
+    color: black;
     padding: 20px;
     max-width: 400px;
     margin: 0 auto;
@@ -21,22 +21,21 @@
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    background-color: #fff;
+    background-color: black;
     color: #000;
     border: none;
     border-radius: 4px;
 }
 
 .form-button {
-    background-color: #fff;
+    background-color: black;
     color: #000;
     padding: 10px 20px;
     font-size: 16px;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.form-button:hover {
-    background-color: #eee;
-}
+/* .form-button:hover {
+    background-color: black;
+} */

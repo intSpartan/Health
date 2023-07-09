@@ -6,13 +6,17 @@ import { collection, addDoc, getDocs, setDoc, where, doc, query, updateDoc, dele
 import { useRouter } from 'next/navigation';
 import "./contactForm.css"
 import { useAuth } from '@clerk/nextjs';
+import { Loading } from '@nextui-org/react';
+import LoadingScreen from '../Components/loadingscreen';
+import Dashboard from "../dashboard/page"
 
 
-const ContactForm = () => {
+function ContactForm() {
 
     const { isLoaded, userId, sessionId, getToken } = useAuth();
-    const router = useRouter();
+    const myId = userId
 
+    const router = useRouter();
 
     const [Name, setName] = useState('');
     const [Email, setEmail] = useState('');
@@ -77,7 +81,7 @@ const ContactForm = () => {
             setGoals("");
             setExtraInformation("");
         }).catch((err) => {
-            console.log("UserFound")
+            console.log(err.message);
         })
     };
 
@@ -86,15 +90,19 @@ const ContactForm = () => {
         const querySnapshot = await getDocs(q);
         if (querySnapshot.empty) {
             console.log("No");
-            router.push("/contact")
+            // router.push("/contact")
+            return 0;
         }
         else {
             console.log("Yes");
+            // router.push("/dashboard")
+            return 1;
         }
-    }
 
+    }
     return (
         <div>
+            {/* <LoadingScreen /> */}
             <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
                 </div>
@@ -193,6 +201,7 @@ const ContactForm = () => {
             </form>
         </div>
     );
+
 };
 
 export default ContactForm;
